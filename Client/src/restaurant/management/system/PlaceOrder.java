@@ -4,7 +4,7 @@
  */
 package restaurant.management.system;
 
-import com.itextpdf.text.Paragraph;
+
 import com.itextpdf.text.pdf.PdfPTable;
 import dao.BillDao;
 import dao.CategoryDao;
