@@ -33,7 +33,13 @@ import org.json.simple.parser.ParseException;
  *
  * @author 5442
  */
+public class Server {
 
+    private ServerSocket serverSocket;
+
+    public Server(ServerSocket serverSocket) {
+        this.serverSocket = serverSocket;
+    }
 
     @Override
     public void run() {
