@@ -13,6 +13,7 @@ import javax.swing.JOptionPane;
  *
  * @author khaled
  */
+
 public class CategoryDao {
     public static void save(Category category){
         String query ="insert into category(name) values('"+category.getName()+"')";
