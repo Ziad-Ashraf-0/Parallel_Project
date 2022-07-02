@@ -42,22 +42,7 @@ public class Client {
     
     
     
-    public User Login(String email,String password){
-        JSONObject obj = new JSONObject();      
-        obj.put("type","login");
-        obj.put("email",email);
-        obj.put("password",password);
-        System.out.println(obj.toString());
-        out.println(obj.toString());
-        
-        
-        String input = in.nextLine();               
-        if (input.equalsIgnoreCase("true")){
-            return new User();
-        }
-        return null;
-                
-    }
+    
     
     
      public User SignUp(String email,String password){
