@@ -17,7 +17,8 @@ import dao.DbOperations;
 public class tables {
     
    /* public static void main(String[]args){
-        
+       
+       
       try{
           String userTable="create table user(id int AUTO_INCREMENT primary key,name varchar(200),email varchar(200),mobileno varchar(15),password varchar(200),status varchar(20),UNIQUE(email))";
           DbOperations.setDataOrDelete(userTable, "user table created successfully");
@@ -35,6 +36,7 @@ public class tables {
           JOptionPane.showMessageDialog(null,e);
       }
         
+    
     
     
     }*/
