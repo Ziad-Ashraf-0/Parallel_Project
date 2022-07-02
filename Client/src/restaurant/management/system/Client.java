@@ -51,11 +51,7 @@ public class Client {
         out.println(obj.toString());
         
         
-        String input = in.nextLine();               
-        if (input.equalsIgnoreCase("true")){
-            return new User();
-        }
-        return null;
+        
                 
     }
     
