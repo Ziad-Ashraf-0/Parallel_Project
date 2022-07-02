@@ -75,7 +75,18 @@ class ClientHandler implements Runnable {
     private Scanner in;
     //private String clientUsername;
 
-    
+    public ClientHandler(Socket socket){
+        try {
+            this.socket = socket;
+            this.out = new PrintWriter(socket.getOutputStream(), true);
+            this.in = new Scanner(socket.getInputStream());
+            clientHandlers.add(this);
+            System.out.println("Number of Connected Clients: " + clientHandlers.size());
+        } catch (IOException ex) {
+            System.out.println("Connection closed");
+               
+        }
+    }
 
     @Override
     public void run() {
