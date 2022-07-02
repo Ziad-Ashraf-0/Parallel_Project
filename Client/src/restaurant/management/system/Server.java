@@ -33,60 +33,7 @@ import org.json.simple.parser.ParseException;
  *
  * @author 5442
  */
-public class Server {
 
-    private ServerSocket serverSocket;
-
-    public Server(ServerSocket serverSocket) {
-        this.serverSocket = serverSocket;
-    }
-
-    public void startServer() throws IOException {
-
-        try {
-            System.out.println("Server Started!!!!");
-
-            while (!serverSocket.isClosed()) {
-
-                Socket socket = serverSocket.accept();
-                System.out.println("A new client has connected");
-                ClientHandler clientHandler = new ClientHandler(socket);
-                Thread thread = new Thread(clientHandler);
-                thread.start();
-
-            }
-        } catch (IOException e) {
-             
-        }
-    }
-
-    
-}
-
-class ClientHandler implements Runnable {
-
-    public static boolean isNumeric(String str) {
-        return str.matches("-?\\d+(\\.\\d+)?");  //match a number with optional '-' and decimal.
-    }
-
-    public static ArrayList<ClientHandler> clientHandlers = new ArrayList<ClientHandler>();
-    private Socket socket;
-    private PrintWriter out;
-    private Scanner in;
-    //private String clientUsername;
-
-    public ClientHandler(Socket socket){
-        try {
-            this.socket = socket;
-            this.out = new PrintWriter(socket.getOutputStream(), true);
-            this.in = new Scanner(socket.getInputStream());
-            clientHandlers.add(this);
-            System.out.println("Number of Connected Clients: " + clientHandlers.size());
-        } catch (IOException ex) {
-            System.out.println("Connection closed");
-               
-        }
-    }
 
     @Override
     public void run() {
